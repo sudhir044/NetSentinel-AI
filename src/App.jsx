@@ -1,17 +1,13 @@
-import { useState } from 'react'
+
 import './App.css'
+import Dashboard from './pages/Dashboard'
 
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>ISRO</h1>
-      </header>
-    </div>
+    <Dashboard />
   )
+
 }
 
 export default App
