@@ -2,8 +2,8 @@ import React from "react";
 
 function Alerts() {
     return (
-        <div>
-            <h1>Alerts</h1>
+        <div className="min-h-screen bg-[#020817] text-white">
+            Alerts
         </div>
     );
 }

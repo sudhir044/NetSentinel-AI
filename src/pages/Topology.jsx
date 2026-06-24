@@ -2,8 +2,8 @@ import React from "react";
 
 function Topology() {
     return (
-        <div>
-            <h1>Topology</h1>
+        <div className="min-h-screen bg-[#020817] text-white">
+            Topology
         </div>
     );
 }

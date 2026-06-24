@@ -2,8 +2,8 @@ import React from "react";
 
 function Copilot() {
     return (
-        <div>
-            <h1>Copilot</h1>
+        <div className="min-h-screen bg-[#020817] text-white">
+            Copilot
         </div>
     );
 }

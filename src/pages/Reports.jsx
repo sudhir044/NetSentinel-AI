@@ -2,8 +2,8 @@ import React from "react";
 
 function Reports() {
     return (
-        <div>
-            <h1>Reports</h1>
+        <div className="min-h-screen bg-[#020817] text-white">
+            Reports
         </div>
     );
 }

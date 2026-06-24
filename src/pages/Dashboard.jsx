@@ -1,55 +1,33 @@
-import React from "react";
-import DashboardHeader from "../components/dashboard/DashboardHeader";
-import AiinsightCard from "../components/dashboard/AiinsightCard";
-import AlertTable from "../components/dashboard/AlertTable";
-import MetricCard from "../components/dashboard/MetricCard";
-import PredictionList from "../components/dashboard/PredictionList";
-import PerformanceChart from "../components/dashboard/PerformanceChart";
-import TopologyGraph from "../components/dashboard/TopologyGraph";
-import MainLayout from "../components/layout/MainLayout";
+import DashboardHeader from "../components/dashboard/DashboardHeader"
+import AiinsightCard from "../components/dashboard/AiinsightCard"
+import AlertTable from "../components/dashboard/AlertTable"
+import PerformanceChart from "../components/dashboard/PreformanceChart"
+import PredictionList from "../components/dashboard/PredictionList"
+import TopologyGraph from "../components/dashboard/TopologyGraph"
+
 
 function Dashboard() {
     return (
-        <MainLayout>
-
-            <DashboardHeader />
-
-            <div className="grid grid-cols-2 gap-6 mt-6">
-
-                <MetricCard />
-
-                <MetricCard />
-
-                <MetricCard />
-
-                <MetricCard />
-
+        <>
+            <div>
+                <DashboardHeader />
             </div>
-
-            <div className="grid grid-cols-2 gap-6 mt-6">
-
-                <PerformanceChart />
-
+            <div>
                 <AiinsightCard />
-
             </div>
-
-            <div className="grid grid-cols-2 gap-6 mt-6">
-
-                <TopologyGraph />
-
-                <PredictionList />
-
-            </div>
-
-            <div className="mt-6">
-
+            <div>
                 <AlertTable />
-
             </div>
-
-        </MainLayout>
-
+            <div>
+                <PerformanceChart />
+            </div>
+            <div>
+                <PredictionList />
+            </div>
+            <div>
+                <TopologyGraph />
+            </div>
+        </>
     );
 }
 
