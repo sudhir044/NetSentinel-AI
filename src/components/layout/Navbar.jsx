@@ -1,108 +1,77 @@
-
-
-
-import { Shield, Menu, ArrowRight } from "lucide-react";
+import { Shield, Menu, ArrowRight, Sun, Moon } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTheme } from "../../context/ThemeProvider";
 
 function Navbar() {
+    const { theme, setTheme } = useTheme();
+
+    const toggleTheme = () => {
+        setTheme(theme === 'dark' ? 'light' : 'dark');
+    };
+
     return (
-        <header className="fixed top-0 left-0 w-full z-50 bg-[#020817]/80 backdrop-blur-xl border-b border-slate-800">
+        <header className="h-20 border-b border-accent-secondary">
             <div className="max-w-7xl mx-auto h-20 px-8 flex items-center justify-between">
 
                 {/* Logo */}
-
                 <Link to="/" className="flex items-center gap-3">
-
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center shadow-lg shadow-cyan-500/20">
-
-                        <Shield size={26} className="text-white" />
-
+                    <div className="w-12 h-12 rounded-xl bg-accent-primary flex items-center justify-center shadow-lg shadow-accent-primary/20">
+                        <Shield size={26} className="text-text-primary" />
                     </div>
-
                     <div>
-
-                        <h1 className="text-xl font-bold text-white">
-
+                        <h1 className="text-xl font-bold text-text-primary">
                             NOC Copilot
-
                         </h1>
-
-                        <p className="text-xs text-slate-400">
-
+                        <p className="text-xs text-text-secondary">
                             Air-Gapped AI Platform
-
                         </p>
-
                     </div>
-
                 </Link>
 
                 {/* Navigation */}
-
                 <nav className="hidden lg:flex items-center gap-10">
-
-                    <a
-                        href="#home"
-                        className="text-slate-300 hover:text-cyan-400 transition"
-                    >
+                    <a href="#home" className="text-text-hint hover:text-accent-primary transition">
                         Home
                     </a>
-
-                    <a
-                        href="#features"
-                        className="text-slate-300 hover:text-cyan-400 transition"
-                    >
+                    <a href="#features" className="text-text-hint hover:text-accent-primary transition">
                         Features
                     </a>
-
-                    <a
-                        href="#architecture"
-                        className="text-slate-300 hover:text-cyan-400 transition"
-                    >
+                    <a href="#architecture" className="text-text-hint hover:text-accent-primary transition">
                         Architecture
                     </a>
-
-                    <a
-                        href="#team"
-                        className="text-slate-300 hover:text-cyan-400 transition"
-                    >
+                    <a href="#team" className="text-text-hint hover:text-accent-primary transition">
                         Team
                     </a>
-
-                    <Link
-                        to="/dashboard"
-                        className="text-slate-300 hover:text-cyan-400 transition"
-                    >
+                    <Link to="/dashboard" className="text-text-hint hover:text-accent-primary transition">
                         Dashboard
                     </Link>
-
                 </nav>
 
                 {/* Right Side */}
-
                 <div className="flex items-center gap-4">
+                    
+                    {/* Theme Toggle */}
+                    <button 
+                        onClick={toggleTheme}
+                        className="text-text-hint hover:text-accent-primary transition p-2 rounded-full hover:bg-bg-elevated/50"
+                        title="Toggle Theme"
+                    >
+                        {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+                    </button>
 
                     <Link
                         to="/dashboard"
-                        className="hidden md:flex items-center gap-2 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 px-6 py-3 text-white font-semibold transition duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/20"
+                        className="hidden md:flex items-center gap-2 rounded-xl bg-accent-primary hover:bg-accent-hover px-6 py-3 text-text-primary font-semibold transition duration-300 hover:scale-105 hover:shadow-lg hover:shadow-accent-primary/20"
                     >
-
                         Launch Dashboard
-
                         <ArrowRight size={18} />
-
                     </Link>
 
                     {/* Mobile */}
-
-                    <button className="lg:hidden text-white">
-
+                    <button className="lg:hidden text-text-primary">
                         <Menu />
-
                     </button>
-
                 </div>
-
             </div>
         </header>
     );

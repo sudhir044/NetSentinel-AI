@@ -39,10 +39,10 @@ function Team() {
     return (
         <section
             id="team"
-            className="relative py-28 bg-[#020817] overflow-hidden"
+            className="relative py-28 bg-bg-primary overflow-hidden"
         >
             {/* Background Glow */}
-            <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-cyan-500/10 blur-[180px] rounded-full" />
+            <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-bg-elevated blur-[180px] rounded-full" />
 
             <div className="relative max-w-7xl mx-auto px-8">
 
@@ -50,16 +50,16 @@ function Team() {
 
                 <div className="text-center max-w-3xl mx-auto">
 
-                    <p className="text-cyan-400 uppercase tracking-[0.3em] text-sm font-semibold">
+                    <p className="text-accent-primary uppercase tracking-[0.3em] text-sm font-semibold">
                         Our Team
                     </p>
 
-                    <h2 className="mt-4 text-5xl font-bold text-white">
+                    <h2 className="mt-4 text-5xl font-bold text-text-primary">
                         Built by a
-                        <span className="text-cyan-400"> Multidisciplinary Team</span>
+                        <span className="text-accent-primary"> Multidisciplinary Team</span>
                     </h2>
 
-                    <p className="mt-6 text-slate-400 text-lg leading-8">
+                    <p className="mt-6 text-text-secondary text-lg leading-8">
                         Combining expertise in AI, Networking and Full Stack
                         Development to build an intelligent offline NOC platform.
                     </p>
@@ -74,22 +74,22 @@ function Team() {
 
                         <div
                             key={index}
-                            className="rounded-3xl border border-slate-800 bg-slate-900/40 backdrop-blur-xl p-8 hover:border-cyan-500 transition duration-300"
+                            className="rounded-3xl border border-accent-secondary bg-bg-surface/40 backdrop-blur-xl p-8 hover:border-accent-secondary transition duration-300"
                         >
 
-                            <div className="w-16 h-16 rounded-2xl bg-cyan-500/10 flex items-center justify-center text-cyan-400">
+                            <div className="w-16 h-16 rounded-2xl bg-bg-elevated flex items-center justify-center text-accent-primary">
 
                                 {member.icon}
 
                             </div>
 
-                            <h3 className="mt-8 text-xl font-semibold text-white">
+                            <h3 className="mt-8 text-xl font-semibold text-text-primary">
 
                                 {member.role}
 
                             </h3>
 
-                            <p className="mt-4 text-slate-400 leading-7">
+                            <p className="mt-4 text-text-secondary leading-7">
 
                                 {member.description}
 
@@ -97,7 +97,7 @@ function Team() {
 
                             {/* Placeholder */}
 
-                            <div className="mt-8 h-12 rounded-xl border border-dashed border-slate-700 flex items-center justify-center text-slate-500 text-sm">
+                            <div className="mt-8 h-12 rounded-xl border border-dashed border-accent-secondary flex items-center justify-center text-text-secondary text-sm">
 
                                 Member Name
 

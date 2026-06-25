@@ -1,10 +1,11 @@
 import React from "react";
+import Dashboard from "../../pages/Dashboard";
 
 function DashboardPreview() {
     return (
-        <div>
-            Dashboard Preview Section
-        </div>
+        <>
+            <Dashboard />
+        </>
     );
 }
 

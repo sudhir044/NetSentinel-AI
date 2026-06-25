@@ -1,6 +1,18 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    background: #020817;
-    color: white;
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+
+}
+
+::-webkit-scrollbar {
+    width: 8px;
 }
 
 body::before {

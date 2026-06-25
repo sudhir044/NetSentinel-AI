@@ -1,1 +1,72 @@
 @import "tailwindcss";
+
+@import "tailwindcss";
+
+@theme {
+    /* Backgrounds */
+    --color-bg-primary: var(--bg-primary);
+    --color-bg-surface: var(--bg-surface);
+    --color-bg-elevated: var(--bg-elevated);
+
+    /* Accents */
+    --color-accent-primary: var(--accent-primary);
+    --color-accent-hover: var(--accent-hover);
+    --color-accent-secondary: var(--accent-secondary);
+
+    /* Text */
+    --color-text-primary: var(--text-primary);
+    --color-text-secondary: var(--text-secondary);
+    --color-text-hint: var(--text-hint);
+}
+
+:root {
+    /* Light Mode */
+    --bg-primary: #f8fafc;
+    --bg-surface: #ffffff;
+    --bg-elevated: #f1f5f9;
+    --accent-primary: #0ea5e9; /* Cyan 500 for light mode to look clean */
+    --accent-hover: #38bdf8; /* Cyan 400 */
+    --accent-secondary: #e2e8f0;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-hint: #94a3b8;
+}
+
+.dark {
+    /* Deep Space ISRO Theme */
+    --bg-primary: #0B1628;
+    --bg-surface: #0F2444;
+    --bg-elevated: #1A3A6B;
+    --accent-primary: #FF6B00;
+    --accent-hover: #FFB347;
+    --accent-secondary: #2B5FAD;
+    --text-primary: #E8F4FD;
+    --text-secondary: #8BA5C4;
+    --text-hint: #4A6FA5;
+}
+
+html,
+body,
+#root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--color-bg-primary);
+    color: var(--color-text-primary);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 10px;
+}

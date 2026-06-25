@@ -4,21 +4,21 @@ function FeatureCard({ feature }) {
     const Icon = feature.icon;
 
     return (
-        <div className="group relative rounded-3xl border border-slate-800 bg-slate-900/40 backdrop-blur-xl p-8 hover:border-cyan-500 transition-all duration-300 hover:-translate-y-2">
+        <div className="group relative rounded-3xl border border-accent-secondary bg-bg-surface/40 backdrop-blur-xl p-8 hover:border-accent-secondary transition-all duration-300 hover:-translate-y-2">
 
             {/* Glow */}
-            <div className="absolute inset-0 rounded-3xl bg-cyan-500/5 opacity-0 group-hover:opacity-100 transition" />
+            <div className="absolute inset-0 rounded-3xl bg-accent-primary/5 opacity-0 group-hover:opacity-100 transition" />
 
             {/* Icon */}
-            <div className="relative w-16 h-16 rounded-2xl bg-cyan-500/10 flex items-center justify-center">
+            <div className="relative w-16 h-16 rounded-2xl bg-bg-elevated flex items-center justify-center">
 
-                <Icon className="text-cyan-400" size={34} />
+                <Icon className="text-accent-primary" size={34} />
 
             </div>
 
             {/* Title */}
 
-            <h3 className="relative mt-8 text-2xl font-semibold text-white">
+            <h3 className="relative mt-8 text-2xl font-semibold text-text-primary">
 
                 {feature.title}
 
@@ -26,7 +26,7 @@ function FeatureCard({ feature }) {
 
             {/* Description */}
 
-            <p className="relative mt-4 text-slate-400 leading-7">
+            <p className="relative mt-4 text-text-secondary leading-7">
 
                 {feature.description}
 
@@ -42,17 +42,17 @@ function Features() {
 
             {/* Section Header */}
             <div className="text-center mb-16">
-                <span className="inline-block px-4 py-1.5 rounded-full border border-cyan-500/20 bg-cyan-500/5 text-xs font-semibold tracking-widest text-cyan-400 uppercase mb-6">
+                <span className="inline-block px-4 py-1.5 rounded-full border border-accent-secondary/20 bg-accent-primary/5 text-xs font-semibold tracking-widest text-accent-primary uppercase mb-6">
                     Features
                 </span>
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-4">
                     Built for{" "}
                     <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">
                         Mission-Critical
                     </span>{" "}
                     Networks
                 </h2>
-                <p className="max-w-2xl mx-auto text-slate-400 text-lg">
+                <p className="max-w-2xl mx-auto text-text-secondary text-lg">
                     Every feature is designed to work offline, ensuring zero cloud dependency
                     for sensitive government and enterprise networks.
                 </p>

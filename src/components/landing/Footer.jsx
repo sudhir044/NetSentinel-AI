@@ -6,7 +6,7 @@ import { FaGithub as Github, FaLinkedin as Linkedin } from "react-icons/fa";
 
 function Footer() {
     return (
-        <footer className="bg-[#030712] border-t border-slate-800 mt-32">
+        <footer className="bg-bg-primary border-t border-accent-secondary mt-32">
 
             <div className="max-w-7xl mx-auto px-8 py-16">
 
@@ -18,21 +18,21 @@ function Footer() {
 
                         <div className="flex items-center gap-3">
 
-                            <div className="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center">
+                            <div className="w-12 h-12 rounded-xl bg-bg-elevated flex items-center justify-center">
 
-                                <Shield className="text-cyan-400" />
+                                <Shield className="text-accent-primary" />
 
                             </div>
 
                             <div>
 
-                                <h2 className="text-white text-xl font-bold">
+                                <h2 className="text-text-primary text-xl font-bold">
 
                                     NOC Copilot
 
                                 </h2>
 
-                                <p className="text-slate-400 text-sm">
+                                <p className="text-text-secondary text-sm">
 
                                     AI Network Operations
 
@@ -42,7 +42,7 @@ function Footer() {
 
                         </div>
 
-                        <p className="text-slate-400 mt-6 leading-7">
+                        <p className="text-text-secondary mt-6 leading-7">
 
                             Air-Gapped AI Copilot for secure MPLS and SD-WAN
                             network operations with predictive analytics.
@@ -55,13 +55,13 @@ function Footer() {
 
                     <div>
 
-                        <h3 className="text-white font-semibold mb-5">
+                        <h3 className="text-text-primary font-semibold mb-5">
 
                             Product
 
                         </h3>
 
-                        <ul className="space-y-3 text-slate-400">
+                        <ul className="space-y-3 text-text-secondary">
 
                             <li>Dashboard</li>
 
@@ -79,13 +79,13 @@ function Footer() {
 
                     <div>
 
-                        <h3 className="text-white font-semibold mb-5">
+                        <h3 className="text-text-primary font-semibold mb-5">
 
                             Resources
 
                         </h3>
 
-                        <ul className="space-y-3 text-slate-400">
+                        <ul className="space-y-3 text-text-secondary">
 
                             <li>Documentation</li>
 
@@ -103,13 +103,13 @@ function Footer() {
 
                     <div>
 
-                        <h3 className="text-white font-semibold mb-5">
+                        <h3 className="text-text-primary font-semibold mb-5">
 
                             Company
 
                         </h3>
 
-                        <ul className="space-y-3 text-slate-400">
+                        <ul className="space-y-3 text-text-secondary">
 
                             <li>About</li>
 
@@ -127,7 +127,7 @@ function Footer() {
 
                     <div>
 
-                        <h3 className="text-white font-semibold mb-5">
+                        <h3 className="text-text-primary font-semibold mb-5">
 
                             Connect
 
@@ -135,21 +135,21 @@ function Footer() {
 
                         <div className="flex gap-4">
 
-                            <div className="p-3 rounded-xl bg-slate-900 hover:bg-cyan-500/10 transition">
+                            <div className="p-3 rounded-xl bg-bg-surface hover:bg-bg-elevated transition">
 
-                                <Github className="text-white" size={20} />
-
-                            </div>
-
-                            <div className="p-3 rounded-xl bg-slate-900 hover:bg-cyan-500/10 transition">
-
-                                <Linkedin className="text-white" size={20} />
+                                <Github className="text-text-primary" size={20} />
 
                             </div>
 
-                            <div className="p-3 rounded-xl bg-slate-900 hover:bg-cyan-500/10 transition">
+                            <div className="p-3 rounded-xl bg-bg-surface hover:bg-bg-elevated transition">
 
-                                <Mail className="text-white" size={20} />
+                                <Linkedin className="text-text-primary" size={20} />
+
+                            </div>
+
+                            <div className="p-3 rounded-xl bg-bg-surface hover:bg-bg-elevated transition">
+
+                                <Mail className="text-text-primary" size={20} />
 
                             </div>
 
@@ -161,15 +161,15 @@ function Footer() {
 
 
 
-                <div className="border-t border-slate-800 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <div className="border-t border-accent-secondary mt-16 pt-8 flex flex-col md:flex-row justify-between items-center">
 
-                    <p className="text-slate-500 text-sm">
+                    <p className="text-text-secondary text-sm">
 
                         © 2026 NOC Copilot. Built for Bharatiya Antariksh Hackathon.
 
                     </p>
 
-                    <p className="text-slate-500 text-sm mt-4 md:mt-0">
+                    <p className="text-text-secondary text-sm mt-4 md:mt-0">
 
                         Made with React • FastAPI • Ollama • LangChain
 
