@@ -7,6 +7,8 @@ from app.api.chat import router as chat_router
 
 from app.api.rag import router as rag_router
 
+from app.api.upload import router as upload_router
+
 app = FastAPI(
     title=settings.APP_NAME,
     version=settings.APP_VERSION
@@ -27,6 +29,12 @@ app.include_router(
     rag_router,
     prefix="/api",
     tags=["RAG"]
+)
+
+app.include_router(
+    upload_router,
+    prefix="/api",
+    tags=["Upload"]
 )
 
 

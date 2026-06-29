@@ -1,5 +1,13 @@
+import { Activity, ShieldAlert, BrainCircuit, Clock } from "lucide-react";
+
 function MetricCard({ metric }) {
-    const Icon = metric.icon;
+    let Icon = Activity;
+    if (metric.title === "Critical Alerts") Icon = ShieldAlert;
+    else if (metric.title === "AI Accuracy") Icon = BrainCircuit;
+    else if (metric.title === "Avg. Latency") Icon = Clock;
+    
+    // Use metric.icon if provided, otherwise use mapped Icon
+    Icon = metric.icon || Icon;
 
     const colorStyles = {
         green: { text: "text-emerald-400", bg: "bg-emerald-400/10", border: "border-emerald-400/20" },

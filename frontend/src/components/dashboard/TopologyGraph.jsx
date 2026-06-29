@@ -1,6 +1,6 @@
-import { nodes, links } from "../../data/topology";
 
-function TopologyGraph() {
+
+function TopologyGraph({ nodes, links }) {
     return (
         <div className="rounded-2xl border border-accent-secondary bg-bg-surface/50 p-6 h-full flex flex-col min-h-0">
             <h2 className="text-2xl font-semibold text-text-primary mb-6 flex-shrink-0">

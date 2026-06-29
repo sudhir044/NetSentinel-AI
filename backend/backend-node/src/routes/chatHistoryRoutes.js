@@ -5,13 +5,13 @@ const router = express.Router();
 const protect = require("../middleware/authMiddleware");
 
 const {
-    analyze
-} = require("../controllers/predicationController");
+    history,
+} = require("../controllers/chatHistoryController");
 
-router.post(
-    "/analyze",
+router.get(
+    "/",
     protect,
-    analyze
+    history
 );
 
 module.exports = router;

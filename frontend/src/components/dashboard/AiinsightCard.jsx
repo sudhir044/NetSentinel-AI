@@ -1,7 +1,8 @@
 import { BrainCircuit, ShieldCheck, ArrowRight } from "lucide-react";
-import { aiInsight } from "../../data/aiInsight";
 
-function AIInsightCard() {
+function AIInsightCard({ insight }) {
+    if (!insight) return null;
+
     return (
         <div className="rounded-2xl border border-accent-secondary bg-bg-surface/50 p-6 h-full">
 
@@ -13,7 +14,7 @@ function AIInsightCard() {
 
                 <div>
                     <h2 className="text-xl font-semibold text-text-primary">
-                        {aiInsight.title}
+                        {insight.title}
                     </h2>
 
                     <p className="text-text-secondary text-sm">
@@ -25,11 +26,11 @@ function AIInsightCard() {
 
             <div className="mt-8">
                 <span className="px-3 py-1 rounded-full bg-red-500/10 text-red-400 text-sm">
-                    {aiInsight.severity} Priority
+                    {insight.severity} Priority
                 </span>
 
                 <p className="mt-4 text-text-hint leading-7">
-                    {aiInsight.message}
+                    {insight.message}
                 </p>
             </div>
 
@@ -46,7 +47,7 @@ function AIInsightCard() {
 
                     <span className="text-accent-primary font-bold">
 
-                        {aiInsight.confidence}
+                        {insight.confidence}
 
                     </span>
 
@@ -72,7 +73,7 @@ function AIInsightCard() {
 
                 <p className="text-text-secondary leading-7">
 
-                    {aiInsight.recommendation}
+                    {insight.recommendation}
 
                 </p>
 

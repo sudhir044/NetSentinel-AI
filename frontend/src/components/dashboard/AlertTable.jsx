@@ -1,7 +1,6 @@
-import { alerts } from "../../data/alerts";
 import { Eye } from "lucide-react";
 
-function AlertTable() {
+function AlertTable({ alerts }) {
     return (
         <div className="rounded-2xl border border-accent-secondary bg-bg-surface/50 p-6 h-full flex flex-col min-h-0">
 

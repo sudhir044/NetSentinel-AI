@@ -13,11 +13,14 @@ import Alerts from "../pages/Alerts.jsx"
 import Reports from "../pages/Reports.jsx"
 import AIModels from "../pages/AIModels.jsx"
 import Predictions from "../pages/Predictions.jsx"
+import ProtectedRoute from "./ProtectedRoute";
+import Login from "../pages/Login.jsx";
+import Register from "../pages/Register";
 
 function RouteTransition() {
     const location = useLocation();
     const [isRouting, setIsRouting] = useState(false);
-    
+
     useEffect(() => {
         setIsRouting(true);
         const timer = setTimeout(() => setIsRouting(false), 800);
@@ -27,13 +30,13 @@ function RouteTransition() {
     return (
         <AnimatePresence>
             {isRouting && (
-                <motion.div 
+                <motion.div
                     initial={{ opacity: 1 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0, transition: { duration: 0.3 } }}
                     className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-bg-primary"
                 >
-                    <motion.div 
+                    <motion.div
                         initial={{ scale: 0.8, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
                         transition={{ duration: 0.3 }}
@@ -55,18 +58,84 @@ export default function AppRoutes() {
         <>
             <RouteTransition />
             <Routes>
-
-            <Route path="/" element={<Home />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/copilot" element={<Copilot />} />
-            <Route path="/ai-models" element={<AIModels />} />
-            <Route path="/predictions" element={<Predictions />} />
-            <Route path="/alerts" element={<Alerts />} />
-            <Route path="/logs" element={<Logs />} />
-            <Route path="/settings" element={<Settings />} />
-            <Route path="/reports" element={<Reports />} />
-            <Route path="/topology" element={<Topology />} />
-        </Routes>
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/" element={<Home />} />
+                <Route
+                    path="/dashboard"
+                    element={
+                        <ProtectedRoute>
+                            <Dashboard />
+                        </ProtectedRoute>
+                    }
+                />
+                <Route
+                    path="/copilot"
+                    element={
+                        <ProtectedRoute>
+                            <Copilot />
+                        </ProtectedRoute>
+                    }
+                />
+                <Route
+                    path="/ai-models"
+                    element={
+                        <ProtectedRoute>
+                            <AIModels />
+                        </ProtectedRoute>
+                    }
+                />
+                <Route
+                    path="/predictions"
+                    element={
+                        <ProtectedRoute>
+                            <Predictions />
+                        </ProtectedRoute>
+                    }
+                />
+                <Route
+                    path="/alerts"
+                    element={
+                        <ProtectedRoute>
+                            <Alerts />
+                        </ProtectedRoute>
+                    }
+                />
+                <Route
+                    path="/logs"
+                    element={
+                        <ProtectedRoute>
+                            <Logs />
+                        </ProtectedRoute>
+                    }
+                />
+                <Route
+                    path="/settings"
+                    element={
+                        <ProtectedRoute>
+                            <Settings />
+                        </ProtectedRoute>
+                    }
+                />
+                <Route
+                    path="/reports"
+                    element={
+                        <ProtectedRoute>
+                            <Reports />
+                        </ProtectedRoute>
+                    }
+                />
+                <Route
+                    path="/topology"
+                    element={
+                        <ProtectedRoute>
+                            <Topology />
+                        </ProtectedRoute>
+                    }
+                />
+            </Routes>
         </>
-    );
-}   
+    )
+}
+
+

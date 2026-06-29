@@ -7,7 +7,10 @@ const notFound = require("./middleware/notFoundMiddleware");
 const errorHandler = require("./middleware/errorMiddleware");
 const routes = require("./routes");
 const dashboardRoutes = require("./routes/dashboardRoutes");
-const predictionRoutes = require("./routes/predictionRoutes");
+const predicationRoutes = require("./routes/predicationRoutes");
+const aiRoutes = require("./routes/aiRoutes");
+const chatHistoryRoutes = require("./routes/chatHistoryRoutes");
+
 
 
 const app = express();
@@ -18,12 +21,13 @@ app.use(cors());
 app.use(helmet());
 app.use(morgan("dev"));
 app.use(cookieParser());
+app.use("/api/ai", aiRoutes);
 
 app.use("/api/v1", routes);
-app.use("/api/predictions", predictionRoutes);
+app.use("/api/predictions", predicationRoutes);
 const alertRoutes = require("./routes/alertRoutes");
 const reportRoutes = require("./routes/reportRoutes");
-const aiRoutes = require("./routes/aiRoutes");
+
 
 app.get("/", (req, res) => {
     res.json({
@@ -33,6 +37,10 @@ app.get("/", (req, res) => {
 });
 app.use("/api/dashboard", dashboardRoutes);
 app.use("/api/alerts", alertRoutes);
+app.use(
+    "/api/chat-history",
+    chatHistoryRoutes
+);
 
 app.use(notFound);
 app.use(errorHandler);

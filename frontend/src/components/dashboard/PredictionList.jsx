@@ -1,11 +1,10 @@
-import { predictions } from "../../data/predictions";
 import {
     BrainCircuit,
     Clock3,
     TriangleAlert,
 } from "lucide-react";
 
-function PredictionList() {
+function PredictionList({ predictions }) {
     return (
         <div className="rounded-2xl border border-accent-secondary bg-bg-surface/50 p-6 h-full flex flex-col min-h-0">
             <div className="flex items-center gap-3 mb-6 flex-shrink-0">
