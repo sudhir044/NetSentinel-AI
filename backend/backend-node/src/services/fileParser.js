@@ -2,14 +2,23 @@ const fs = require("fs");
 const path = require("path");
 const csv = require("csv-parser");
 
+/**
+ * Read TXT file
+ */
 const parseTxt = async (filePath) => {
-    return fs.promises.readFile(filePath, "utf8");
+    return await fs.promises.readFile(filePath, "utf8");
 };
 
+/**
+ * Read LOG file
+ */
 const parseLog = async (filePath) => {
-    return fs.promises.readFile(filePath, "utf8");
+    return await fs.promises.readFile(filePath, "utf8");
 };
 
+/**
+ * Read JSON file
+ */
 const parseJson = async (filePath) => {
     const content = await fs.promises.readFile(filePath, "utf8");
 
@@ -18,7 +27,11 @@ const parseJson = async (filePath) => {
     return JSON.stringify(json, null, 2);
 };
 
+/**
+ * Read CSV file
+ */
 const parseCsv = async (filePath) => {
+
     return new Promise((resolve, reject) => {
 
         const rows = [];
@@ -32,19 +45,27 @@ const parseCsv = async (filePath) => {
             })
             .on("end", () => {
 
-                const text = rows
-                    .map(row => Object.values(row).join(" | "))
+                const result = rows
+                    .map((row) => Object.values(row).join(" | "))
                     .join("\n");
 
-                resolve(text);
+                resolve(result);
 
             })
             .on("error", reject);
 
     });
+
 };
 
+/**
+ * Main parser
+ */
 const parseFile = async (file) => {
+
+    if (!file) {
+        throw new Error("No file uploaded");
+    }
 
     const extension = path.extname(file.originalname).toLowerCase();
 
@@ -63,11 +84,12 @@ const parseFile = async (file) => {
             return await parseCsv(file.path);
 
         default:
-            throw new Error("Unsupported file format");
+            throw new Error("Unsupported file type");
+
     }
 
 };
 
 module.exports = {
-    parseFile
+    parseFile,
 };
