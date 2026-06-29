@@ -1,37 +1,22 @@
-exports.buildAnalysisPrompt = (logContent) => {
-    return `
-You are a Senior SOC Analyst.
+const axios = require("axios");
+const { buildAnalysisPrompt } = require("../prompts/analysisPrompt");
 
-Analyze the following security log.
+const analyzeLog = async (logContent) => {
 
-Return ONLY valid JSON.
+    const prompt = buildAnalysisPrompt(logContent);
 
-JSON format:
+    const response = await axios.post(
+        "http://localhost:11434/api/generate",
+        {
+            model: "phi3:mini",   // Change if you use llama3, mistral, etc.
+            prompt,
+            stream: false,
+        }
+    );
 
-{
-  "summary":"",
-  "severity":"",
-  "riskScore":0,
-  "threats":[],
-  "recommendations":[]
-}
+    return response.data.response;
+};
 
-Rules:
-
-1. severity must be one of:
-Low
-Medium
-High
-Critical
-
-2. riskScore must be between 0 and 100.
-
-3. recommendations must contain practical security advice.
-
-4. Do NOT include markdown.
-
-Security Log:
-
-${logContent}
-`;
+module.exports = {
+    analyzeLog,
 };

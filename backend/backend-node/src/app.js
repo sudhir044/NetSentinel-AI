@@ -10,6 +10,9 @@ const dashboardRoutes = require("./routes/dashboardRoutes");
 const predicationRoutes = require("./routes/predicationRoutes");
 const aiRoutes = require("./routes/aiRoutes");
 const chatHistoryRoutes = require("./routes/chatHistoryRoutes");
+const analysisRoutes = require("./routes/analysisRoutes");
+const alertRoutes = require("./routes/alertRoutes");
+const reportRoutes = require("./routes/reportRoutes");
 
 
 
@@ -25,10 +28,6 @@ app.use("/api/ai", aiRoutes);
 
 app.use("/api/v1", routes);
 app.use("/api/predictions", predicationRoutes);
-const alertRoutes = require("./routes/alertRoutes");
-const reportRoutes = require("./routes/reportRoutes");
-
-
 app.get("/", (req, res) => {
     res.json({
         success: true,
@@ -41,11 +40,11 @@ app.use(
     "/api/chat-history",
     chatHistoryRoutes
 );
+app.use("/api/reports", reportRoutes);
+app.use("/api/analysis", analysisRoutes);
 
 app.use(notFound);
 app.use(errorHandler);
-app.use("/api/reports", reportRoutes);
-app.use("/api/ai", aiRoutes);
 
 module.exports = app;
 
