@@ -1,29 +1,25 @@
 const axios = require("axios");
 
-const chatWithAI = async (message) => {
+const { buildAnalysisPrompt } = require("../prompts/analysisPrompt");
 
-    try {
+exports.analyzeLog = async (logContent) => {
 
-        const response = await axios.post(
-            "http://127.0.0.1:8000/api/chat",
-            {
-                message
-            }
-        );
+    const prompt = buildAnalysisPrompt(logContent);
 
-        return response.data;
+    const response = await axios.post(
 
-    } catch (error) {
+        "http://localhost:11434/api/generate",
 
-        return {
-            success: false,
-            message: "FastAPI server is not running."
-        };
+        {
+            model: "phi3:mini",
 
-    }
+            prompt,
 
-};
+            stream: false
+        }
 
-module.exports = {
-    chatWithAI
+    );
+
+    return response.data.response;
+
 };
